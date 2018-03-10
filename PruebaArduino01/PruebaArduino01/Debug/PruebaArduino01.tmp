@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\Debug\PruebaArduino01.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>PruebaArduino01.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>PruebaArduino01.map</FILE>
+  <FILE>PruebaArduino01.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</FILE><LINE>11</LINE></main>
+  <loop><FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</FILE><LINE>15</LINE></loop>
+  <delay_05><FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</FILE><LINE>23</LINE></delay_05>
+  <outer_loop><FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</FILE><LINE>27</LINE></outer_loop>
+  <delay_loop><FILE>K:\Atmel Studio\7.0\PruebaArduino01\PruebaArduino01\main.asm</FILE><LINE>31</LINE></delay_loop>
+ </LABELS>
+</ASSEMBLER_INFO>
