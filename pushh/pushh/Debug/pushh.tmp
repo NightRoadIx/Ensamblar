@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>K:\Atmel Studio\7.0\pushh\pushh\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>K:\Atmel Studio\7.0\pushh\pushh\Debug\pushh.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>pushh.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>pushh.map</FILE>
+  <FILE>pushh.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>14</LINE></config>
+  <main><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>37</LINE></main>
+  <prende><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>45</LINE></prende>
+  <delay_05><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>50</LINE></delay_05>
+  <outer_loop><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>54</LINE></outer_loop>
+  <delay_loop><FILE>K:\Atmel Studio\7.0\pushh\pushh\main.asm</FILE><LINE>58</LINE></delay_loop>
+ </LABELS>
+</ASSEMBLER_INFO>
