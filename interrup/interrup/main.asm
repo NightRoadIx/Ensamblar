@@ -5,9 +5,11 @@
 ; Author : MaedhrosIx
 ;
 
-.ORG 0x0000					; Organiza todo a partir de la direcciÛn 0x0000
+.ORG 0x0000					; Organiza todo a partir de la direcci√≥n 0x0000
 RJMP setup					; Asegurar que el programa comience en la etiqueta setup
-
+.ORG INT0addr					; Organizar la direcci√≥n de la interrupci√≥n INT0
+RJMP EXT_INT0					; Aqui es donde ir√° la interrupci√≥n cuando se mande a llamar
+	
 ; ******************************************************************************************************
 ; RUTINA DE CONFIGURACIONES
 setup: 
@@ -22,31 +24,31 @@ setup:
 	LDI r16, 0b00111111
 	OUT DDRB, r16
 	; Configurar Puerto C como salidas
-	OUT DDRC, r16			; Colocar el registro de DirecciÛn de Datos (DDR) del puerto B como salidas para todos los pines
+	OUT DDRC, r16			; Colocar el registro de Direcci√≥n de Datos (DDR) del puerto B como salidas para todos los pines
 	; Configurar Puerto D, Pin2 como entrada
 	LDI r16, 0b11111011
 	OUT DDRD, r16
 
-	; *** Configurar la interrupciÛn INT0
-	; En primer lugar se activan las interrupciones (activar bit7 del SREG)
-	SEI
-	; DespuÈs habiliar la interrupciÛn0 INT0
+	; *** Configurar la interrupci√≥n INT0
+	; Despu√©s habiliar la interrupci√≥n0 INT0
 	SBI EIMSK, 0
-	; Es posible modificar la la forma en que se activa la interupciÛn con EICRA
+	; Es posible modificar la la forma en que se activa la interupci√≥n con EICRA
 	; 00	LOW
 	; 01	CHANGE
 	; 10	FALLING
 	; 11	RISING
 	LDI r22, 0b00000011
 	STS EICRA, r22	; Se requiere utilizar STS por el espacio en memoria
-	; A PARTIR DE AQUÕ SE PUEDEN USAR LAS INTERRUPCIONES
+	; Finalmente se activan las interrupciones (activar bit7 del SREG) globales
+	SEI	
+	; A PARTIR DE AQU√ç SE PUEDEN USAR LAS INTERRUPCIONES
 	
 ; ******************************************************************************************************
 ; RUTINA DE CONTADOR INCREMENTAL
 loop:
 	LDI r17, 0x00			; colocar r17 al inicio de la memoria EEPROM
 	continc:
-		CALL EEPROM_read	; Leer la EEPROM en la direcciÛn asignada por r18:r17
+		CALL EEPROM_read	; Leer la EEPROM en la direcci√≥n asignada por r18:r17
 		OUT PORTC, r19		; Enviar los valores por el PORTC
 		BST r19,6			; Guardar bit 6 del r19 en T (SREG6)
 		BLD r20,5			; Cargar el bit T del SREG en el bit del registro 
@@ -69,7 +71,7 @@ outer_loop:
 	LDI r24, low(3037)		; Cargar low(3037) en el registro 24
 	LDI r25, high(3037)		; Cargar high(3037) en el registro 25
 	delay_loop: 
-		ADIW r24, 1				; AÒadir inmediatamente a la palabra, r24:r25 se incrementan
+		ADIW r24, 1				; A√±adir inmediatamente a la palabra, r24:r25 se incrementan
 		BRNE delay_loop			; si no hay un overflow ("salir si no es igual"), regresar a la etiqueta
 		DEC r16					; disminuir r16
 		BRNE outer_loop			; si no hay un overflow ("salir si no es igual"), regresar a la etiqueta
@@ -80,9 +82,9 @@ outer_loop:
 EEPROM_read:
 	; asegurar que haya una lectura en proceso
 	SBIC EECR, EEPE
-	RJMP EEPROM_read	; Salto relativo al mismo en caso de que la instrucciÛn anterior no de un salto
+	RJMP EEPROM_read	; Salto relativo al mismo en caso de que la instrucci√≥n anterior no de un salto
 
-	; Establecer la direcciÛn, en el registro EEAR de 16 bits
+	; Establecer la direcci√≥n, en el registro EEAR de 16 bits
 	OUT EEARH, r18
 	OUT EEARL, r17
 
@@ -96,8 +98,8 @@ EEPROM_read:
 ; ******************************************************************************************************
 ; INTERRUPCIONES
 
-; InterrupciÛn INT0
+; Interrupci√≥n INT0
 EXT_INT0:
 	LDI r17, 0x00
-	; Regresar al punto donde se quedo el cÛdigo al mandar a llamar la interrupciÛn
+	; Regresar al punto donde se quedo el c√≥digo al mandar a llamar la interrupci√≥n
 	RETI
