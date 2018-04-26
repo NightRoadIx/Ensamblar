@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\Debug\pwmp.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>pwmp.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>pwmp.map</FILE>
+  <FILE>pwmp.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</FILE><LINE>8</LINE></setup>
+  <configpwm><FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</FILE><LINE>29</LINE></configpwm>
+  <delay_05><FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</FILE><LINE>63</LINE></delay_05>
+  <outer_loop><FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</FILE><LINE>66</LINE></outer_loop>
+  <delay_loop><FILE>I:\LES\UACM\MicrosyPerifericos\AtmelSTduio\pwmp\pwmp\main.asm</FILE><LINE>69</LINE></delay_loop>
+ </LABELS>
+</ASSEMBLER_INFO>
