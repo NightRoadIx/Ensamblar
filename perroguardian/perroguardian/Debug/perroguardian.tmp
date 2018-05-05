@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\Debug\perroguardian.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>perroguardian.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>perroguardian.map</FILE>
+  <FILE>perroguardian.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>12</LINE></setup>
+  <guachdoj><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>108</LINE></guachdoj>
+  <WDT_off><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>93</LINE></WDT_off>
+  <flasheo><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>38</LINE></flasheo>
+  <delay_05><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>60</LINE></delay_05>
+  <WDT_config><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>76</LINE></WDT_config>
+  <loop><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>54</LINE></loop>
+  <outer_loop><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>63</LINE></outer_loop>
+  <delay_loop><FILE>C:\Users\MaedhrosIx\Documents\Atmel Studio\7.0\perroguardian\perroguardian\main.asm</FILE><LINE>66</LINE></delay_loop>
+ </LABELS>
+</ASSEMBLER_INFO>
