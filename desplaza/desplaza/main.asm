@@ -14,40 +14,42 @@ main:
 ; Desplazamiento de bits
 ; Estas operaciones afectan al bit de acarreo del registro de estado (lo usan como buffer)
 desplazamiento:
-	LSR r16				; Desplazar una posici髇 a la derecha el bit del registro
+	LSR r16				; Desplazar una posici贸n a la derecha el bit del registro
 	LSR r16				; Desplazar de nuevo
-	; El desplazamiento a la izquierda se realiza con la instrucci髇 LSL
+	; El desplazamiento a la izquierda se realiza con la instrucci贸n LSL
 	LSL r16
 	LSL r16
 
-	ASR r16				; Desplazamiento aritm閠ico hacia la derecha
+	ASR r16				; Desplazamiento aritm茅tico hacia la derecha
 	ASR r16
 
 	LDI r16, 128
 rotacion:
-	ROL r16				; Rotaci髇 de un bit hacia la izquierda
-	; La rotaci髇 a la derecha se realiza con ROR
+	ROL r16				; Rotaci贸n de un bit hacia la izquierda
+	; La rotaci贸n a la derecha se realiza con ROR
 	ROR r16
 
 intercambio:
 	SWAP r16			; Realiza un intercambio de nibbles en el registro
 
 ; Modificar los bits del registro de estado y brincos dependientes (TODOS LLEVAN A UNA ETIQUETA):
-; Nombre		Bit		EnviarAlto		EnviarBajo		BrincaSiAlto	BrincaSiBajo
-; Interrupci髇	(I)		SEI				CLI				BRIE			BRID
+; Nombre	Bit		EnviarAlto			EnviarBajo			BrincaSiAlto		BrincaSiBajo
+; Interrupci贸n	(I)		SEI				CLI				BRIE			BRID
 ; Bit Respaldo	(T)		SET				CLT				BRTS			BRTC
 ; Medio Acarreo	(H)		SEH				CLH				BRHS			BRHC
-; Signo			(S)		SES				CLS				BRGE			BRLT *
+; Signo		(S)		SES				CLS				BRGE			BRLT *
 ; Sobreflujo	(V)		SEV				CLV				BRVS			BRVC
-; Negativo		(N)		SEN				CLN				BRMI			BRPL $
-; Cero			(Z)		SEZ				CLZ				BREQ			BRNE +
-; Acarreo		(C)		SEC				CLC				BRCS			BRCC
+; Negativo	(N)		SEN				CLN				BRMI			BRPL $
+; Cero		(Z)		SEZ				CLZ				BREQ			BRNE +
+; Acarreo	(C)		SEC				CLC				BRCS			BRCC
+;		(C)										BRLO			BRSH /
 ;
 ; Notas
 ; * BRGE es comparativo brinca si es mayor o igual que, mientras que BRLT brinca si es menor que (todo con signo)
 ; + BREQ es comparativo brinca si son iguales, mientras que BRNE brinca si no son iguales
 ; $ BRMI brinca si es negativo, mientras que BRPL brinca si no es negativo
-; Se utilizan junto con las instrucciones de comparaci髇 CP, CPC (con acarreo) y CPI (con una constante),
+; / BRLO Brinca si el n煤mero es menor, mientras que BRSH brinca si el n煤mero es mayor o igual (no se considera el signo)
+; Se utilizan junto con las instrucciones de comparaci贸n CP, CPC (con acarreo) y CPI (con una constante),
 ; ya que modifican las banderas Z, C, N, V, H, S
 ; CPSE Rd, Rf realiza la comparacion de dos registros para ver si son iguales
 
@@ -71,7 +73,7 @@ outer_loop:
 	LDI r24, low(3037)		; Cargar low(3037) en el registro 24
 	LDI r25, high(3037)		; Cargar high(3037) en el registro 25
 	delay_loop: 
-		ADIW r24, 1				; A馻dir inmediatamente a la palabra, r24:r25 se incrementan
+		ADIW r24, 1				; A帽adir inmediatamente a la palabra, r24:r25 se incrementan
 		BRNE delay_loop			; si no hay un overflow ("salir si no es igual"), regresar a la etiqueta
 		DEC r16					; disminuir r16
 		BRNE outer_loop			; si no hay un overflow ("salir si no es igual"), regresar a la etiqueta
